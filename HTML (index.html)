@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Management Panel</title>
+    <title>Aufgabenverwaltungs-Panel</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Task Management Panel</h1>
+        <h1>Aufgabenverwaltungs-Panel</h1>
         <div class="task-input">
-            <input type="text" id="taskInput" placeholder="Enter a new task...">
-            <button onclick="addTask()">Add Task</button>
+            <input type="text" id="taskInput" placeholder="Neue Aufgabe eingeben...">
+            <button onclick="addTask()">Aufgabe hinzufügen</button>
         </div>
         <ul id="taskList"></ul>
     </div>
