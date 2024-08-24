@@ -1,0 +1,40 @@
+// Aufgabe hinzufügen Funktion
+function addTask() {
+    const taskInput = document.getElementById('taskInput');
+    const taskText = taskInput.value.trim();
+
+    if (taskText === '') {
+        alert('Bitte geben Sie eine Aufgabe ein!');
+        return;
+    }
+
+    const taskList = document.getElementById('taskList');
+    const taskItem = document.createElement('li');
+    taskItem.innerHTML = `
+        <span>${taskText}</span>
+        <div>
+            <button class="edit-btn" onclick="editTask(this)">Bearbeiten</button>
+            <button onclick="completeTask(this)">Abschließen</button>
+        </div>
+    `;
+
+    taskList.appendChild(taskItem);
+    taskInput.value = '';
+}
+
+// Aufgabe abschließen Funktion
+function completeTask(button) {
+    const taskItem = button.parentElement.parentElement;
+    taskItem.classList.toggle('completed');
+}
+
+// Aufgabe bearbeiten Funktion
+function editTask(button) {
+    const taskItem = button.parentElement.parentElement;
+    const taskText = taskItem.querySelector('span').textContent;
+    const newTaskText = prompt('Aufgabe bearbeiten:', taskText);
+
+    if (newTaskText !== null && newTaskText.trim() !== '') {
+        taskItem.querySelector('span').textContent = newTaskText.trim();
+    }
+}
